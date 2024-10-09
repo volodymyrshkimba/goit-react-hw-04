@@ -1,0 +1,68 @@
+.card {
+  max-width: 525px;
+  text-align: center;
+  border: 3px solid #212121;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.info {
+  padding-top: 20px;
+  padding-bottom: 25px;
+}
+
+.img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2),
+    -10px -10px 20px rgba(255, 255, 255, 0.1), 0 10px 30px rgba(0, 0, 0, 0.15);
+  margin-bottom: 25px;
+}
+
+.name {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.tag {
+  font-size: 28px;
+  color: #808080;
+  margin-bottom: 5px;
+}
+
+.location {
+  font-size: 28px;
+  color: #808080;
+}
+
+.list {
+  display: flex;
+  background-color: #d3d3d3;
+  border-top: 3px solid #808080;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 25px;
+}
+
+.item:nth-child(2) {
+  border-left: 3px solid #808080;
+  border-right: 3px solid #808080;
+}
+
+.statName {
+  font-size: 26px;
+}
+
+.statValue {
+  font-size: 26px;
+  font-weight: 600;
+}
