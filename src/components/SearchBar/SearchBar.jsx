@@ -1,9 +1,11 @@
+import toast from "react-hot-toast";
+
 const SearchBar = ({ onSearch }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const userWord = event.target.elements.search.value.trim();
     if (!userWord) {
-      alert("ender word");
+      toast.error("Enter text.", { position: "top-right" });
       return;
     }
 

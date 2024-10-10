@@ -1,4 +1,6 @@
 import axios from "axios";
+import Modal from "react-modal";
+import { Toaster } from "react-hot-toast";
 
 import { useEffect, useState } from "react";
 
@@ -7,6 +9,18 @@ import SearchBar from "./components/SearchBar/SearchBar";
 import Loader from "./components/Loader/Loader";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
+
+Modal.setAppElement("#root");
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
 
 function App() {
   const [images, setImages] = useState([]);
@@ -59,6 +73,22 @@ function App() {
     };
     request();
   }, [keyWord, page]);
+
+  let subtitle;
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    subtitle.style.color = "#f00";
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
   return (
     <div>
       <SearchBar onSearch={onSearch} />
@@ -66,6 +96,28 @@ function App() {
         (error && <ErrorMessage />)}
       {loading && <Loader />}
       {page < totalPages && <LoadMoreBtn onLoadMore={onLoadMore} />}
+      <Toaster />
+      <div>
+        <button onClick={openModal}>Open Modal</button>
+        <Modal
+          isOpen={modalIsOpen}
+          onAfterOpen={afterOpenModal}
+          onRequestClose={closeModal}
+          style={customStyles}
+          contentLabel="Example Modal"
+        >
+          <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
+          <button onClick={closeModal}>close</button>
+          <div>I am a modal</div>
+          <form>
+            <input />
+            <button>tab navigation</button>
+            <button>stays</button>
+            <button>inside</button>
+            <button>the modal</button>
+          </form>
+        </Modal>
+      </div>
     </div>
   );
 }
