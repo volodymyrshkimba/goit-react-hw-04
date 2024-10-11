@@ -1,0 +1,6 @@
+.errorWrapper {
+  color: rgba(212, 30, 30, 0.741);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

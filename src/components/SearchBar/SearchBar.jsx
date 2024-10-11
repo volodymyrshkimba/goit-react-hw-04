@@ -5,7 +5,7 @@ const SearchBar = ({ onSearch }) => {
     event.preventDefault();
     const userWord = event.target.elements.search.value.trim();
     if (!userWord) {
-      toast.error("Enter text.", { position: "top-right" });
+      toast.error("Enter text before search", { position: "top-right" });
       return;
     }
 

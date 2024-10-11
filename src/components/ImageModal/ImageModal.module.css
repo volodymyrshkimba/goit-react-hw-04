@@ -1,0 +1,20 @@
+.info {
+  position: absolute;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 5px;
+  left: 5px;
+  color: rgb(255, 255, 255);
+  max-width: 70%;
+}
+
+.info li {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.info p {
+  width: 100%;
+}
