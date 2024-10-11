@@ -1,16 +1,26 @@
-import { TailSpin } from "react-loader-spinner";
+import { Vortex } from "react-loader-spinner";
 
 const Loader = () => {
   return (
-    <TailSpin
+    <Vortex
       visible={true}
       height="80"
       width="80"
-      color="#4fa94d"
-      ariaLabel="tail-spin-loading"
-      radius="1"
-      wrapperStyle={{}}
-      wrapperClass=""
+      ariaLabel="vortex-loading"
+      wrapperStyle={{
+        marginLeft: "auto",
+        marginRight: "auto",
+        display: "block",
+      }}
+      wrapperClass="vortex-wrapper"
+      colors={[
+        "#e6e6fa",
+        "#bfb7e0",
+        "#d1cdeb",
+        "#e6e6fa",
+        "#bfb7e0",
+        "#d1cdeb",
+      ]}
     />
   );
 };

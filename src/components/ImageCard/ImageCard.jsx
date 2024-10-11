@@ -1,3 +1,5 @@
+import css from "./ImageCard.module.css";
+
 const ImageCard = ({ image, onOpenModal }) => {
   const handleClick = () => {
     console.log(image);
@@ -12,6 +14,7 @@ const ImageCard = ({ image, onOpenModal }) => {
   };
   return (
     <img
+      className={css.img}
       onClick={handleClick}
       src={image.urls.small}
       alt={image.alt_description}

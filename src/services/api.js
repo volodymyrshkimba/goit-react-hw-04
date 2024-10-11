@@ -4,7 +4,7 @@ export const requestPhotoByKey = (keyWord, page) => {
   const axiosParams = {
     params: {
       page: page,
-      per_page: 5,
+      per_page: 12,
       query: keyWord,
       orientation: "landscape",
       client_id: "_cEZO8aU1C92VerVD8fgjS-e5kaWbfs7zX1oTmKEH-E",
