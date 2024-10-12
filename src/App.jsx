@@ -4,6 +4,8 @@ import { Toaster } from "react-hot-toast";
 
 import { requestPhotoByKey } from "./services/api.js";
 
+import css from "./App.module.css";
+
 import ImageGallery from "./components/ImageGallery/ImageGallery";
 import SearchBar from "./components/SearchBar/SearchBar";
 import Loader from "./components/Loader/Loader";
@@ -54,6 +56,7 @@ function App() {
           if (page === 1) {
             return response.data.results;
           }
+
           return [...prevImages, ...response.data.results];
         });
       } catch {
@@ -62,11 +65,12 @@ function App() {
         setLoading(false);
       }
     };
+
     request();
   }, [keyWord, page]);
 
   return (
-    <div>
+    <div className={css.appWrapper}>
       <SearchBar onSearch={onSearch} />
       {(images.length > 0 && (
         <ImageGallery onOpenModal={onOpenModal} images={images} />

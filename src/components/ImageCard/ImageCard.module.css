@@ -3,3 +3,9 @@
   height: 100%;
   object-fit: cover;
 }
+
+.item {
+  width: calc((1440px / 4) - 30px);
+  height: 200px;
+  overflow: hidden;
+}
